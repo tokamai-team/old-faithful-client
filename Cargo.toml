@@ -11,6 +11,7 @@ repository = "https://github.com/tokamai/tokamai-old-faithful-client"
 keywords = ["solana", "blockchain", "grpc", "client", "old-faithful"]
 categories = ["api-bindings", "asynchronous"]
 readme = "README.md"
+exclude = ["examples/*"]
 
 [dependencies]
 # Core async runtime
