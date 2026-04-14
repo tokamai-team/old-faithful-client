@@ -2,6 +2,8 @@
 
 Rust SDK for interacting with [Old Faithful](https://github.com/rpcpool/yellowstone-faithful) gRPC services, providing access to Solana historical data.
 
+Most of the code was taken from repos on the https://github.com/rpcpool.
+
 ## Features
 
 - Unary RPCs: `GetVersion`, `GetBlock`, `GetBlockTime`, `GetTransaction`
@@ -35,7 +37,7 @@ async fn main() -> anyhow::Result<()> {
 ## Streaming transactions for a single program across a slot range
 
 A common backfill pattern: replay every transaction that touched a given program
-between two slots. `StreamTransactions` does the heavy lifting server-side —
+between two slots. `StreamTransactions` does the heavy lifting server-side,
 Old Faithful walks the CAR archives, applies the `account_include` filter, and
 yields transactions as they are decoded. This is how `panoptes` backfills
 per-program watchlists.
@@ -44,7 +46,7 @@ per-program watchlists.
 use futures::StreamExt;
 use yellowstone_faithful_client::{connect_with_config, GrpcConfig, StreamTransactionsFilter};
 
-// Pump.fun program — any pubkey the transaction references (signer, writable,
+// Pump.fun program, any pubkey the transaction references (signer, writable,
 // readonly, or invoked program) counts as a match.
 const PUMP_FUN: &str = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P";
 
@@ -100,4 +102,4 @@ cargo build
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT [LICENSE](LICENSE).
