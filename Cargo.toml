@@ -6,8 +6,9 @@ edition = "2021"
 rust-version = "1.75.0"
 description = "Rust SDK for interacting with Old Faithful gRPC services, providing access to Solana historical data"
 license = "MIT"
+homepage = "https://www.tokamai.com"
 repository = "https://github.com/tokamai/tokamai-old-faithful-client"
-keywords = ["solana", "blockchain", "grpc", "client"]
+keywords = ["solana", "blockchain", "grpc", "client", "old-faithful"]
 categories = ["api-bindings", "asynchronous"]
 readme = "README.md"
 
